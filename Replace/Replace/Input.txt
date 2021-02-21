@@ -1,0 +1,24 @@
+Hello mama!
+"$(ProjectDir)Tests.bat" "$(TargetPath)"
+12312312345
+World mart
+Я тебя очень сильно люблю!
+А ты меня не любишь?
+Как твои дела?
+Я в полном порядке. Вчера ходила за хлебом. Сейчас программирую)
+REM Copy non empty file
+%Program% NonEmptyFile.txt "%TEMP%\output.txt" || goto err
+fc NonEmptyFile.txt "%TEMP%\output.txt" > nul || goto err
+echo Test 2 passed
+
+REM Copy missing file should fail
+%Program% MissingFile.txt "%TEMP%\output.txt" && goto err
+echo Test 3 passed
+
+REM If output file is not specified, program must fail
+%Program% MissingFile.txt && goto err
+echo Test 4 passed
+
+REM If input and output files is a not specified, program must fail
+%Program% && goto err
+echo Test 5 passed
