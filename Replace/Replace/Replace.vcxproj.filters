@@ -27,7 +27,6 @@
     <Text Include="Papa_out.txt" />
     <Text Include="Fresh_fish_out.txt" />
     <Text Include="Fresh_fish.txt" />
-    <Text Include="Empty.txt" />
     <Text Include="Empty_out.txt" />
   </ItemGroup>
   <ItemGroup>
