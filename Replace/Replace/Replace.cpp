@@ -33,22 +33,29 @@ std::optional<Args> ParseArgs(int argc, char* argv[])
 }
 
 
-void ReplaceString(std::optional<Args>& args, std::fstream& input, std::ofstream& output)
+std::string ReplaceString(const std::string& searchString, const std::string& str, const std::string& replaceString)
+{
+    std::string strCopy;
+    std::string::size_type position = 0;
+    std::string::size_type positionSearchStr;
+    if (!searchString.empty())
+    {
+        while ((positionSearchStr = str.find(searchString, position)) != std::string::npos)
+        {
+            strCopy.append(str, position, positionSearchStr - position).append(replaceString);
+            position = positionSearchStr + searchString.length();
+        }
+    }
+    strCopy.append(str, position);
+    return strCopy;
+}
+
+void CopyReplaceString(const std::string& searchString, const std::string& replaceString, std::istream& input, std::ostream& output)
 {
     std::string str;
     while (getline(input, str))
     {
-        int count = 0;
-        if (args -> searchString != "")
-        {
-            while (str.find(args -> searchString, count) != std::string::npos)
-            {
-                str.replace(str.find(args -> searchString, count), args -> searchString.length(), args -> replaceString);
-                count = str.find(args -> replaceString, count) + args -> replaceString.length();
-
-            }
-        }
-        output << str << "\n";
+        output << ReplaceString(searchString, str, replaceString) << "\n";
     }
 }
 
@@ -76,7 +83,7 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    ReplaceString(args, input, output);
+    CopyReplaceString(args->searchString, args->replaceString, input, output);
 
 
     if (input.bad())

@@ -15,6 +15,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FindAndReplace.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
     <ClCompile Include="Replace.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -23,22 +26,5 @@
     <ClInclude Include="Replace.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Tests.bat">
-      <Filter>Исходные файлы</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Tests\Empty.txt" />
-    <Text Include="Tests\Empty_out.txt" />
-    <Text Include="Tests\Fresh_fish.txt" />
-    <Text Include="Tests\Fresh_fish_out.txt" />
-    <Text Include="Tests\Numbers.txt" />
-    <Text Include="Tests\Numbers_out.txt" />
-    <Text Include="Tests\Papa.txt" />
-    <Text Include="Tests\Papa_out.txt" />
-    <Text Include="Input.txt" />
-    <Text Include="Output.txt" />
   </ItemGroup>
 </Project>

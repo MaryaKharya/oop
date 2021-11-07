@@ -15,30 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Replace.cpp">
+    <ClCompile Include="Vector3D_tests.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Vector3D\CVector3D.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Replace.h">
+    <ClInclude Include="..\Vector3D\CVector3D.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Tests.bat">
-      <Filter>Исходные файлы</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Tests\Empty.txt" />
-    <Text Include="Tests\Empty_out.txt" />
-    <Text Include="Tests\Fresh_fish.txt" />
-    <Text Include="Tests\Fresh_fish_out.txt" />
-    <Text Include="Tests\Numbers.txt" />
-    <Text Include="Tests\Numbers_out.txt" />
-    <Text Include="Tests\Papa.txt" />
-    <Text Include="Tests\Papa_out.txt" />
-    <Text Include="Input.txt" />
-    <Text Include="Output.txt" />
   </ItemGroup>
 </Project>

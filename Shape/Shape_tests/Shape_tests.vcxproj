@@ -18,11 +18,37 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Shape\CCanvas.cpp" />
+    <ClCompile Include="..\Shape\CCircle.cpp" />
+    <ClCompile Include="..\Shape\CLineSegment.cpp" />
+    <ClCompile Include="..\Shape\Controller.cpp" />
+    <ClCompile Include="..\Shape\CRectangle.cpp" />
+    <ClCompile Include="..\Shape\CTriangle.cpp" />
+    <ClCompile Include="Shape_tests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Shape\ISolidShape.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Shape\IShape.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Shape\CPoint.h" />
+    <ClInclude Include="..\Shape\CCanvas.h" />
+    <ClInclude Include="..\Shape\CCircle.h" />
+    <ClInclude Include="..\Shape\CLineSegment.h" />
+    <ClInclude Include="..\Shape\Controller.h" />
+    <ClInclude Include="..\Shape\CRectangle.h" />
+    <ClInclude Include="..\Shape\CTriangle.h" />
+    <ClInclude Include="..\Shape\ICanvas.h" />
+    <ClInclude Include="..\Shape\ICanvasDrawable.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{a1be9b8a-ed3b-4367-9b4a-367046a2cc67}</ProjectGuid>
-    <RootNamespace>Replace</RootNamespace>
+    <ProjectGuid>{6a904b72-c535-4b32-b56d-aaa4b880ec55}</ProjectGuid>
+    <RootNamespace>Shapetests</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -88,20 +114,17 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
-      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>C:\Users\Мария\source\repos\SFML-2.5.1-windows-vc15-32-bit\SFML-2.5.1\include;C:\Users\Мария\source\repos\catch2;C:\Users\Мария\source\repos\FakeIt-master\single_header\catch;C:\Users\Мария\source\repos\FakeIt-master\config\catch;C:\Users\Мария\source\repos\FakeIt-master\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;sfml-graphics-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Мария\source\repos\SFML-2.5.1-windows-vc15-32-bit\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>"Tests.bat" "$(TargetPath)"</Command>
+      <Command>"$(TargetPath)"</Command>
     </PostBuildEvent>
-    <PreBuildEvent>
-      <Command>
-      </Command>
-    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -111,8 +134,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
-      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -120,13 +141,6 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <PostBuildEvent>
-      <Command>"Tests.bat" "$(TargetPath)"</Command>
-    </PostBuildEvent>
-    <PreBuildEvent>
-      <Command>
-      </Command>
-    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -134,20 +148,11 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
-      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <PostBuildEvent>
-      <Command>"Tests.bat" "$(TargetPath)"</Command>
-    </PostBuildEvent>
-    <PreBuildEvent>
-      <Command>
-      </Command>
-    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -157,8 +162,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
-      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -166,37 +169,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <PostBuildEvent>
-      <Command>"Tests.bat" "$(TargetPath)"</Command>
-    </PostBuildEvent>
-    <PreBuildEvent>
-      <Command>
-      </Command>
-    </PreBuildEvent>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Replace.cpp">
-      <DeploymentContent>true</DeploymentContent>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Replace.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Tests.bat" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Tests\Empty.txt" />
-    <Text Include="Tests\Empty_out.txt" />
-    <Text Include="Tests\Fresh_fish.txt" />
-    <Text Include="Tests\Fresh_fish_out.txt" />
-    <Text Include="Input.txt" />
-    <Text Include="Tests\Numbers.txt" />
-    <Text Include="Tests\Numbers_out.txt" />
-    <Text Include="Output.txt" />
-    <Text Include="Tests\Papa.txt" />
-    <Text Include="Tests\Papa_out.txt" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
